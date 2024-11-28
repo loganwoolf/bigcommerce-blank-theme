@@ -1,0 +1,21 @@
+---
+cart: true
+---
+
+{{#partial 'body'}}
+	<h1>Cart</h1>
+
+	{{#if cart.items.length}}
+		{{#each cart.items}}
+			<div>
+				<a href="{{url}}">{{name}}</a>
+			</div>
+		{{/each}}
+
+	{{else}}
+		<div>Your cart is empty.</div>
+
+	{{/if}}
+{{/partial}}
+
+{{> layout/base}}

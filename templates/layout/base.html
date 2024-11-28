@@ -10,9 +10,15 @@
 	{{#block 'head'}}{{/block}}
 </head>
 <body>
-	<main>
+	<a href="#main-content">Skip to main content</a>
+
+	{{> components/header}}
+
+	<main id="main-content">
 		{{#block 'body'}}{{/block}}
 	</main>
+
+	{{> components/footer}}
 
 	{{{footer.scripts}}}
 </body>
