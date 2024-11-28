@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="{{ locale_name }}">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<title>{{head.title}}</title>
+	<link rel="shortcut icon" href="{{head.favicon}}" />
+
+	{{#block 'head'}}{{/block}}
+</head>
+<body>
+	<main>
+		{{#block 'body'}}{{/block}}
+	</main>
+
+	{{{footer.scripts}}}
+</body>
+</html>

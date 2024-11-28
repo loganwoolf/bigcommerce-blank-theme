@@ -1,11 +1,15 @@
 {
-  "name": "bigcommerce-blank-theme",
-  "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
-  "author": "",
-  "license": "ISC",
-  "scripts": {
-    "start": "stencil start"
-  }
+	"name": "bigcommerce-blank-theme",
+	"version": "0.0.1",
+	"description": "Blank Stencil theme for BigCommerce",
+	"main": "index.js",
+	"author": "nuotsu <mitchell@nuotsu.dev> (https://nuotsu.dev)",
+	"license": "ISC",
+	"scripts": {
+		"start": "stencil start"
+	},
+	"devDependencies": {
+		"prettier": "^3.4.1",
+		"prettier-plugin-tailwindcss": "^0.6.9"
+	}
 }

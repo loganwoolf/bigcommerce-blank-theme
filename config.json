@@ -1,7 +1,16 @@
 {
+	"meta": {
+		"author_name": "Mitchell Christ",
+		"author_email": "mitchell@nuotsu.dev",
+		"author_support_url": "https://nuotsu.dev"
+	},
 	"variations": [
 		{
-			"name": "Default"
+			"name": "Default",
+			"id": "default",
+			"meta": {
+				"description": "Blank Stencil theme for BigCommerce"
+			}
 		}
 	]
 }

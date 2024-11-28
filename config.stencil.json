@@ -1,11 +1,12 @@
 {
-  "customLayouts": {
-    "brand": {},
-    "category": {},
-    "page": {},
-    "product": {}
-  },
-  "normalStoreUrl": "https://thompsontee.com",
-  "port": 3000,
-  "packageManager": "npm"
+	"customLayouts": {
+		"brand": {},
+		"category": {},
+		"page": {},
+		"product": {}
+	},
+	"normalStoreUrl": "https://thompsontee.com",
+	"port": 3000,
+	"packageManager": "npm",
+	"clientId": "9h5apf3pafdtv1sgleg79i90c79lesr"
 }
