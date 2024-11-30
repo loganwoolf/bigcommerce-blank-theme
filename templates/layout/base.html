@@ -4,14 +4,23 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+	<!-- resourceHints -->
+	{{{ resourceHints }}}
+	<!-- head.meta_tags -->
+	{{{ head.meta_tags }}}
+	<!-- head.config -->
+	{{{ head.config }}}
+	<!-- head.scripts -->
+	{{{ head.scripts }}}
+
 	<title>{{head.title}}</title>
 	<link rel="shortcut icon" href="{{head.favicon}}" />
+	<link rel="stylesheet" href="{{cdn 'assets/styles/global.min.css'}}">
 
 	{{#block 'head'}}{{/block}}
 </head>
 <body>
-	<a href="#main-content">Skip to main content</a>
-
+	{{> components/skip-to-content}}
 	{{> components/header}}
 
 	<main id="main-content">
