@@ -15,7 +15,7 @@
 
 	<title>{{head.title}}</title>
 	<link rel="shortcut icon" href="{{head.favicon}}" />
-	<link rel="stylesheet" href="{{cdn 'assets/styles/global.min.css'}}">
+	<link rel="stylesheet" href="{{cdn 'assets/styles/styles.min.css'}}">
 
 	{{#block 'head'}}{{/block}}
 </head>
@@ -28,6 +28,8 @@
 	</main>
 
 	{{> components/footer}}
+
+	<script src="{{cdn 'assets/scripts/scripts.min.js'}}" defer></script>
 
 	{{{footer.scripts}}}
 </body>
