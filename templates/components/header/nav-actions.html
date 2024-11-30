@@ -1,0 +1,24 @@
+<details name="header" class="dropdown">
+	<summary>Account</summary>
+
+	<ul class="[&_a]:link max-md:absolute top-full left-0 bg-canvas border">
+		{{#if customer}}
+			<li><a href="{{urls.account.index}}">Account</a></li>
+			<li><a href="{{urls.account.orders.all}}">Orders</a></li>
+			{{#if settings.returns_enabled}}
+				<li><a href="{{urls.account.returns}}">Returns</a></li>
+			{{/if}}
+			<li><a href="{{urls.account.inbox}}">Inbox</a></li>
+			<li><a href="{{urls.account.addresses}}">Addresses</a></li>
+			{{#if settings.show_payment_methods}}
+				<li><a href="{{urls.account.payment_methods.all}}">Payment Methods</a></li>
+			{{/if}}
+			<li><a href="{{urls.wishlists.all}}">Wishlists</a></li>
+			<li><a href="{{urls.recent_items}}">Recent Items</a></li>
+			<li><a href="{{urls.account.details}}">Account Details</a></li>
+			<li><a href="{{urls.logout}}">Logout</a></li>
+		{{else}}
+			<li><a href="{{urls.auth.login}}">Login</a></li>
+		{{/if}}
+	</ul>
+</details>

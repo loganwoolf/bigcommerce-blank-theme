@@ -4,6 +4,7 @@
 		"author_email": "mitchell@nuotsu.dev",
 		"author_support_url": "https://nuotsu.dev"
 	},
+	"settings": {},
 	"variations": [
 		{
 			"name": "Default",

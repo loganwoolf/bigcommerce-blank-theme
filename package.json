@@ -7,8 +7,8 @@
 	"license": "ISC",
 	"scripts": {
 		"dev": "stencil start",
-		"build": "stencil bundle",
-		"push": "stencil push",
+		"build": "npm run css:build && stencil bundle",
+		"push": "npm run css:build && stencil push",
 		"css:dev": "tailwindcss -i ./assets/styles/global.css -o ./assets/styles/global.min.css --watch",
 		"css:build": "tailwindcss -i ./assets/styles/global.css -o ./assets/styles/global.min.css --minify"
 	},

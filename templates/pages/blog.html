@@ -1,8 +1,12 @@
 {{#partial 'body'}}
-	<h1>{{blog.name}}</h1>
+	<header>
+		<h1 class="h1">{{blog.name}}</h1>
+	</header>
 
 	{{#each blog.posts}}
-		<article>{{this.title}}</article>
+		<article>
+			{{this.title}}
+		</article>
 	{{/each}}
 {{/partial}}
 

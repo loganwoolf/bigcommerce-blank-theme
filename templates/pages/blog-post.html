@@ -1,7 +1,11 @@
 {{#partial 'body'}}
-	<h1>{{blog.post.title}}</h1>
+	<header>
+		<h1 class="h1">{{blog.post.title}}</h1>
+	</header>
 
-	{{{blog.post.body}}}
+	<article class="richtext">
+		{{{blog.post.body}}}
+	</article>
 {{/partial}}
 
 {{> layout/base}}

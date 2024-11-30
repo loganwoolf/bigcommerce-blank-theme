@@ -1,9 +1,11 @@
 {{#partial 'body'}}
-	<h1>{{page.name}}</h1>
+	<section>
+		<h1>{{page.name}}</h1>
 
-	<div>
-		{{{page.content}}}
-	</div>
+		<article class="richtext">
+			{{{page.content}}}
+		</article>
+	</section>
 {{/partial}}
 
 {{> layout/base}}
