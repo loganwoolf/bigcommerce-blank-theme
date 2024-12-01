@@ -1,17 +1,19 @@
 {{#partial 'body'}}
-	<h1>Cart</h1>
+  <section class="section">
+    <h1 class="h1">Cart</h1>
 
-	{{#if cart.items.length}}
-		{{#each cart.items}}
-			<div>
-				<a href="{{url}}">{{name}}</a>
-			</div>
-		{{/each}}
+    {{#if cart.items.length}}
+      {{#each cart.items}}
+        <div>
+          <a href="{{url}}">{{name}}</a>
+        </div>
+      {{/each}}
 
-	{{else}}
-		<div>Your cart is empty.</div>
+    {{else}}
+      <div>Your cart is empty.</div>
 
-	{{/if}}
+    {{/if}}
+  </section>
 {{/partial}}
 
 {{> layout/base}}

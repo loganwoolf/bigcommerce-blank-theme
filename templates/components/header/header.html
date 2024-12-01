@@ -1,18 +1,20 @@
 <header id="header" class="sticky top-0 z-10 bg-canvas">
-	{{> components/store-logo class="[grid-area:logo]"}}
+  <div class="header-inner section p-4">
+    {{> components/store-logo class="[grid-area:logo] max-w-[160px]"}}
 
-	<nav class="
-		[grid-area:menu] flex max-md:flex-col gap-x-4 md:justify-center
-		max-md:header-closed:hidden max-md:anim-fade-to-r
-	">
-		{{> components/header/menu name="header" summary="Categories" links=categories}}
-		{{> components/header/menu name="header" summary="Pages" links=pages}}
-	</nav>
+    <nav class="
+      [grid-area:menu] flex max-md:flex-col gap-x-4 md:justify-center
+      max-md:header-closed:hidden max-md:anim-fade-to-r
+    ">
+      {{> components/header/menu name="header" summary="Categories" links=categories}}
+      {{> components/header/menu name="header" summary="Pages" links=pages}}
+    </nav>
 
-	<nav class="[grid-area:actions] flex gap-x-4">
-		{{> components/header/nav-actions}}
-		{{> components/header/cart-dropdown}}
-	</nav>
+    <nav class="[grid-area:actions] flex gap-x-4">
+      {{> components/header/nav-actions}}
+      {{> components/header/cart-dropdown}}
+    </nav>
 
-	{{> components/header/toggle}}
+    {{> components/header/toggle}}
+  </div>
 </header>

@@ -1,0 +1,22 @@
+<dl class="flex flex-wrap gap-x-2 {{class}}">
+  {{#if price.with_tax}}
+    <dt class="sr-only">With tax</dt>
+    {{#if price.sale_price_with_tax}}
+      <dd><b>{{price.sale_price_with_tax.formatted}}</b></dd>
+      <dd><s>{{price.non_sale_price_with_tax.formatted}}</s></dd>
+    {{else}}
+      <dd><b>{{price.with_tax.formatted}}</b></dd>
+    {{/if}}
+  {{/if}}
+
+  {{#if price.without_tax}}
+    <dt class="sr-only">Without tax</dt>
+
+    {{#if price.sale_price_without_tax}}
+      <dd><b>{{price.sale_price_without_tax.formatted}}</b></dd>
+      <dd><s>{{price.non_sale_price_without_tax.formatted}}</s></dd>
+    {{else}}
+      <dd><b>{{price.without_tax.formatted}}</b></dd>
+    {{/if}}
+  {{/if}}
+</dl>

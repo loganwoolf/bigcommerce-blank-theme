@@ -1,18 +1,18 @@
 <details name="header" class="dropdown">
-	<summary>
-		Cart
-		<output>({{default cart.items.length 0}})</output>
-	</summary>
+  <summary>
+    Cart
+    <output>({{default cart.items.length 0}})</output>
+  </summary>
 
-	<div class="max-md:absolute top-full left-0 bg-canvas border">
-		{{#or cart.items.length}}
-			<ul>
-				{{#each cart.items}}
-					<li>item</li>
-				{{/each}}
-			</ul>
-		{{/or}}
+  <div class="max-md:absolute top-full left-0 bg-canvas border">
+    {{#or cart.items.length}}
+      <ul>
+        {{#each cart.items}}
+          <li>item</li>
+        {{/each}}
+      </ul>
+    {{/or}}
 
-		<a class="link" href="{{urls.cart}}">View cart</a>
-	</div>
+    <a class="link" href="{{urls.cart}}">View cart</a>
+  </div>
 </details>

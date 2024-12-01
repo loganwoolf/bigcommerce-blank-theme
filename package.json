@@ -1,26 +1,26 @@
 {
-	"name": "bigcommerce-blank-theme",
-	"version": "0.0.1",
-	"description": "Blank Stencil theme for BigCommerce",
-	"main": "index.js",
-	"author": "nuotsu <mitchell@nuotsu.dev> (https://nuotsu.dev)",
-	"license": "ISC",
-	"scripts": {
-		"dev": "stencil start",
-		"build": "npm run styles:build && npm run scripts:build && stencil bundle",
-		"push": "npm run styles:build && npm run scripts:build && stencil push",
-		"styles:dev": "tailwindcss -i ./assets/styles/styles.css -o ./assets/styles/styles.min.css --watch",
-		"styles:build": "tailwindcss -i ./assets/styles/styles.css -o ./assets/styles/styles.min.css --minify",
-		"scripts:dev": "esbuild ./assets/scripts/scripts.ts --bundle --outfile=./assets/scripts/scripts.min.js --watch",
-		"scripts:build": "esbuild ./assets/scripts/scripts.ts --bundle --outfile=./assets/scripts/scripts.min.js --minify"
-	},
-	"dependencies": {
-		"@tailwindcss/cli": "^4.0.0-beta.3",
-		"tailwindcss": "^4.0.0-beta.3"
-	},
-	"devDependencies": {
-		"esbuild": "0.24.0",
-		"prettier": "^3.4.1",
-		"prettier-plugin-tailwindcss": "^0.6.9"
-	}
+  "name": "bigcommerce-blank-theme",
+  "version": "0.0.1",
+  "description": "Blank Stencil theme for BigCommerce",
+  "main": "index.js",
+  "author": "nuotsu <mitchell@nuotsu.dev> (https://nuotsu.dev)",
+  "license": "ISC",
+  "scripts": {
+    "dev": "stencil start",
+    "build": "npm run styles:build && npm run scripts:build && stencil bundle",
+    "push": "npm run styles:build && npm run scripts:build && stencil push",
+    "styles:dev": "tailwindcss -i ./assets/styles/styles.css -o ./assets/styles/styles.min.css --watch",
+    "styles:build": "tailwindcss -i ./assets/styles/styles.css -o ./assets/styles/styles.min.css --minify",
+    "scripts:dev": "esbuild ./assets/scripts/scripts.ts --bundle --outfile=./assets/scripts/scripts.min.js --watch",
+    "scripts:build": "esbuild ./assets/scripts/scripts.ts --bundle --outfile=./assets/scripts/scripts.min.js --minify"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.0.0-beta.3",
+    "tailwindcss": "^4.0.0-beta.3"
+  },
+  "devDependencies": {
+    "esbuild": "0.24.0",
+    "prettier": "^3.4.1",
+    "prettier-plugin-tailwindcss": "^0.6.9"
+  }
 }

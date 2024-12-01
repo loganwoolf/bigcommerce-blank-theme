@@ -1,22 +1,57 @@
 {{#partial 'body'}}
-	<section class="grid md:grid-cols-2 items-start *:md:sticky-below-header gap-x-12 gap-y-6">
-		<figure>
-			{{#each product.images}}
-				<img
-					class="w-full aspect-square object-contain"
-					src="{{getImageSrcset this 1x='450w'}}"
-					alt="{{this.alt}}"
-					width="450"
-					height="450"
-					loading="{{#if @index}}lazy{{else}}eager{{/if}}"
-				>
-			{{/each}}
-		</figure>
+  <section class="section grid md:grid-cols-2 items-start *:md:sticky-below-header gap-x-12 gap-y-6">
+    <figure>
+      {{#each product.images}}
+        <img
+          class="w-full aspect-square object-contain"
+          src="{{getImageSrcset this 1x='450w'}}"
+          alt="{{this.alt}}"
+          width="450"
+          height="450"
+          loading="{{#if @index}}lazy{{else}}eager{{/if}}"
+        >
+      {{/each}}
+    </figure>
 
-		<article>
-			<h1 class="h1">{{product.title}}</h1>
-		</article>
-	</section>
+    <article data-product-id="{{product.id}}">
+      <h1 class="h1">{{product.title}}</h1>
+
+      {{> components/product/price price=product.price}}
+
+      <form class="grid gap-4" action="{{product.cart_url}}" method="post" enctype="multipart/form-data">
+        <input name="action" value="add" type="hidden">
+        <input name="product_id" value="{{product.id}}" type="hidden">
+
+        {{#unless product.can_purchase}}
+          <button class="action">Notify me when available</button>
+        {{/unless}}
+
+        {{#each product.options}}
+          {{> components/product/variant-option option=this}}
+        {{/each}}
+
+        <label for="qty[]">
+          <abbr title="Quantity">Qty</abbr>:
+          <input
+            class="input text-center"
+            id="qty[]"
+            name="qty[]"
+            type="number"
+            min="1"
+            value="1"
+          >
+        </label>
+
+        <div>
+          <input
+            class="action w-full"
+            value="{{#if product.pre_order}}Pre-order{{else}}Add to cart{{/if}}"
+            type="submit"
+          >
+        </div>
+      </form>
+    </article>
+  </section>
 {{/partial}}
 
 {{> layout/base}}

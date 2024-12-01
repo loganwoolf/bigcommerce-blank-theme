@@ -1,13 +1,21 @@
-{{#partial 'body'}}
-	<header>
-		<h1 class="h1">{{blog.name}}</h1>
-	</header>
+---
+blog:
+  posts:
+    limit: 12
+---
 
-	{{#each blog.posts}}
-		<article>
-			{{this.title}}
-		</article>
-	{{/each}}
+{{#partial 'body'}}
+  <section class="section">
+    <h1 class="h1">{{blog.name}}</h1>
+
+    {{#each blog.posts}}
+      <article>
+        <a class="block" href="{{this.url}}">
+          {{this.title}}
+        </a>
+      </article>
+    {{/each}}
+  </section>
 {{/partial}}
 
 {{> layout/base}}

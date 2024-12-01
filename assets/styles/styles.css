@@ -18,7 +18,8 @@
 	}
 
 	summary,
-	label {
+	label,
+	input[type='submit'] {
 		cursor: pointer;
 	}
 }
@@ -73,7 +74,7 @@
 
 @utility input {
 	outline: none;
-	@apply action-base focus-visible:border-accent border border-neutral-300;
+	@apply action-base focus-visible:border-accent border;
 }
 
 /* headings */
@@ -109,7 +110,7 @@
 }
 
 @utility section {
-	@apply mx-auto max-w-screen-lg;
+	@apply mx-auto max-w-screen-xl px-4 py-12;
 }
 
 @utility richtext {
@@ -171,7 +172,7 @@
 @variant header-open (body:has(#header-toggle:checked) &);
 @variant header-closed (body:has(#header-toggle:not(:checked)) &);
 
-#header {
+#header .header-inner {
 	display: grid;
 	grid-template-areas:
 		'logo actions toggle'

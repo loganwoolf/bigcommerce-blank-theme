@@ -2,5 +2,6 @@
 	"files.associations": {
 		"*.html": "handlebars"
 	},
-	"editor.formatOnSave": true
+	"editor.formatOnSave": true,
+	"editor.insertSpaces": true
 }

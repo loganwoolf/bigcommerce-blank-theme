@@ -1,11 +1,9 @@
 {{#partial 'body'}}
-	<header>
-		<h1 class="h1">{{blog.post.title}}</h1>
-	</header>
+  <article class="section richtext">
+    <h1 class="h1">{{blog.post.title}}</h1>
 
-	<article class="richtext">
-		{{{blog.post.body}}}
-	</article>
+    {{{blog.post.body}}}
+  </article>
 {{/partial}}
 
 {{> layout/base}}

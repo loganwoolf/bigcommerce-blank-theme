@@ -1,25 +1,25 @@
 {{#partial 'body'}}
-	<header>
-		{{#unless (occurrences category.description '<h1')}}
-			<h1 class="h1">{{category.name}}</h1>
-		{{/unless}}
+  <header class="section">
+    {{#unless (occurrences category.description '<h1')}}
+      <h1 class="h1">{{category.name}}</h1>
+    {{/unless}}
 
-		{{#if category.description}}
-			<div class="richtext">
-				{{{category.description}}}
-			</div>
-		{{/if}}
-	</header>
+    {{#if category.description}}
+      <div class="richtext">
+        {{{category.description}}}
+      </div>
+    {{/if}}
+  </header>
 
-	<section>
-		<ul class="grid gap-x-6 gap-y-12 sm:grid-cols-2 md:grid-cols-[repeat(auto-fill,minmax(20rem,1fr))]">
-			{{#each category.products}}
-				<li>
-					{{> components/product-card product=this}}
-				</li>
-			{{/each}}
-		</ul>
-	</section>
+  <section class="section">
+    <ul class="grid gap-x-6 gap-y-12 sm:grid-cols-2 md:grid-cols-[repeat(auto-fill,minmax(15rem,1fr))]">
+      {{#each category.products}}
+        <li>
+          {{> components/product/product-card product=this}}
+        </li>
+      {{/each}}
+    </ul>
+  </section>
 {{/partial}}
 
 {{> layout/base}}

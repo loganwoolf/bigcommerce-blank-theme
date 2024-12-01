@@ -1,11 +1,11 @@
 {{#partial 'body'}}
-	<section>
-		<h1>{{page.name}}</h1>
+  <article class="section richtext">
+    {{#unless (occurrences page.content '<h1')}}
+      <h1 class="h1">{{page.name}}</h1>
+    {{/unless}}
 
-		<article class="richtext">
-			{{{page.content}}}
-		</article>
-	</section>
+    {{{page.content}}}
+  </article>
 {{/partial}}
 
 {{> layout/base}}

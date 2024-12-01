@@ -1,16 +1,16 @@
 <details
-	{{#if name}}name="{{name}}"{{/if}}
-	class="dropdown"
+  {{#if name}}name="{{name}}"{{/if}}
+  class="dropdown"
 >
-	<summary>{{summary}}</summary>
+  <summary>{{summary}}</summary>
 
-	<ul>
-		{{#each links}}
-			<li>
-				<a href="{{url}}" class="link">
-					{{name}}
-				</a>
-			</li>
-		{{/each}}
-	</ul>
+  <ul>
+    {{#each links}}
+      <li>
+        <a href="{{url}}" class="link">
+          {{name}}
+        </a>
+      </li>
+    {{/each}}
+  </ul>
 </details>

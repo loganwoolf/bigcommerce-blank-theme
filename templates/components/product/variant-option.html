@@ -1,0 +1,45 @@
+<fieldset class="border">
+  <legend>
+    {{option.display_name}}
+    {{#if option.required}}<span class="text-red-500">*</span>{{/if}}
+  </legend>
+
+  <div class="flex flex-wrap gap-4">
+    {{#each option.values}}
+      <label class="flex items-center gap-2">
+        <input
+          id="attribute_swatch_{{../id}}_{{id}}"
+          name="attribute[{{../id}}]"
+          value="{{id}}"
+          {{#if selected}}checked{{/if}}
+          {{#if ../required}}required{{/if}}
+          type="radio"
+        >
+
+        {{#if this.pattern}}
+          <figure title="{{this.label}}">
+            <img
+              class="aspect-square w-auto h-[1lh]"
+              src="{{getImageSrcset this.pattern 1x='40w'}}"
+              alt="{{this.label}}"
+              width="40"
+              height="40"
+              loading="lazy"
+            >
+          </figure>
+
+        {{else if this.data '!=' this.label}}
+          <div>
+            {{#each this.data}}
+              <div class="aspect-square h-[1lh]" style="background-color: #{{this}};"></div>
+            {{/each}}
+          </div>
+
+        {{else}}
+          {{this.label}}
+
+        {{/if}}
+      </label>
+    {{/each}}
+  </div>
+</fieldset>
