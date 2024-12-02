@@ -1,17 +1,10 @@
+---
+cart: true
+---
+
 {{#partial 'body'}}
   <section class="section grid md:grid-cols-2 items-start *:md:sticky-below-header gap-x-12 gap-y-6">
-    <figure>
-      {{#each product.images}}
-        <img
-          class="w-full aspect-square object-contain"
-          src="{{getImageSrcset this 1x='450w'}}"
-          alt="{{this.alt}}"
-          width="450"
-          height="450"
-          loading="{{#if @index}}lazy{{else}}eager{{/if}}"
-        >
-      {{/each}}
-    </figure>
+    {{> components/product/product-carousel images=product.images}}
 
     <article data-product-id="{{product.id}}">
       <h1 class="h1">{{product.title}}</h1>
@@ -43,11 +36,9 @@
         </label>
 
         <div>
-          <input
-            class="action w-full"
-            value="{{#if product.pre_order}}Pre-order{{else}}Add to cart{{/if}}"
-            type="submit"
-          >
+          <button class="action w-full" type="submit">
+            {{#if product.pre_order}}Pre-order{{else}}Add to cart{{/if}}
+          </button>
         </div>
       </form>
     </article>

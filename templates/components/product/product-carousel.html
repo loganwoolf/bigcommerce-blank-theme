@@ -1,0 +1,62 @@
+<div>
+  <swiper-container
+    zoom
+    thumbs-swiper=".product-carousel-thumbs"
+  >
+    {{#each images}}
+      <swiper-slide>
+        <figure class="swiper-zoom-container">
+          <img
+            class="w-full aspect-square object-contain bg-neutral-100"
+            src="{{getImageSrcset this 1x='800w'}}"
+            alt="{{this.alt}}"
+            width="800"
+            height="800"
+            loading="{{#if @index}}lazy{{else}}eager{{/if}}"
+          />
+        </figure>
+      </swiper-slide>
+    {{/each}}
+  </swiper-container>
+
+  {{!-- thumbs --}}
+  <swiper-container
+    class="product-carousel-thumbs mt-4"
+    slides-per-view="4.5"
+    space-between="12"
+  >
+    {{#each images}}
+      <swiper-slide
+        class="
+          cursor-pointer bg-neutral-100
+          [&.swiper-slide-thumb-active]:bg-accent [&.swiper-slide-thumb-active_img]:opacity-50
+        "
+      >
+        <img
+          class="w-full aspect-square object-contain"
+          src="{{getImageSrcset this 1x='100w'}}"
+          alt="{{this.alt}}"
+          width="100"
+          height="100"
+          loading="lazy"
+        />
+      </swiper-slide>
+    {{/each}}
+  </swiper-container>
+</div>
+
+<script defer>
+(function(){
+  const thumbs = document.querySelector('.product-carousel-thumbs')
+  Object.assign(thumbs, {
+    breakpoints: {
+      429: {
+        slidesPerView: 6.5,
+        spaceBetween: 16,
+      },
+    },
+  })
+
+  thumbs.initialize()
+})()
+</script>
