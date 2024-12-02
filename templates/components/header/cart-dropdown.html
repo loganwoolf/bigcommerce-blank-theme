@@ -1,18 +1,27 @@
-<details name="header" class="dropdown">
-  <summary>
-    Cart
-    <output>({{default cart.items.length 0}})</output>
+<details name="header" class="dropdown max-md:static">
+  <summary class="block">
+    {{> icons/shopping-bag}}
+    <output>({{default cart.quantity 0}})</output>
   </summary>
 
-  <div class="max-md:absolute top-full left-0 bg-canvas border">
+  <div class="
+    absolute top-full right-0 bg-canvas border w-full
+    md:left-auto! md:w-[20em]
+    max-md:inset-x-0 max-md:header-open:top-[calc(1lh+2rem)]
+  ">
     {{#or cart.items.length}}
       <ul>
         {{#each cart.items}}
-          <li>item</li>
+          <li>
+            {{> components/cart/line-item item=this}}
+          </li>
         {{/each}}
       </ul>
     {{/or}}
 
-    <a class="link" href="{{urls.cart}}">View cart</a>
+    <menu class="text-center">
+      <li><a class="link" href="{{urls.cart}}">View cart</a></li>
+      <li><a class="action" href="{{urls.checkout.single_address}}">Checkout</a></li>
+    </menu>
   </div>
 </details>

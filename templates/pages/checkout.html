@@ -1,0 +1,13 @@
+{{#partial 'head'}}
+  {{{ checkout.checkout_head }}}
+
+  <script type="text/javascript">
+    window.language = {{{langJson 'optimized_checkout'}}};
+  </script>
+{{/partial}}
+
+{{#partial 'body'}}
+  {{{ checkout.checkout_content }}}
+{{/partial}}
+
+{{> layout/empty}}

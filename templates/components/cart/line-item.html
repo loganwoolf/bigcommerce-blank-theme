@@ -1,0 +1,63 @@
+<article
+  class="@container flex gap-4 items-center"
+  data-product-id="{{item.id}}"
+>
+  <figure class="shrink-0 self-start">
+    <a class="block" href="{{item.url}}">
+      <img
+        class="w-[60px] @md:w-[100px]"
+        src="{{getImageSrcset item.image 1x='200w'}}"
+        alt="{{item.image.alt}}"
+        width="200"
+        height="200"
+        loading="lazy"
+      />
+    </a>
+  </figure>
+
+  <div class="grow flex gap-x-4 @max-xl:flex-col">
+    <dl class="grow">
+      <dt>
+        <a href="{{item.url}}">
+          <strong>{{item.name}}</strong>
+        </a>
+      </dt>
+
+      {{#each item.options}}
+        <dd>{{this.name}}: {{this.value}}</dd>
+      {{/each}}
+    </dl>
+
+    <dl class="tabular-nums">
+      {{#if item.sale_price.value '<' item.base_price.value}}
+        <dt class="sr-only">Sale price</dt>
+        <dd><b>{{item.sale_price.formatted}}</b></dd>
+
+        <dt class="sr-only">Base price</dt>
+        <dd><s>{{item.base_price.formatted}}</s></dd>
+      {{else}}
+        <dt class="sr-only">Price</dt>
+        <dd>{{item.price.formatted}}</dd>
+      {{/if}}
+    </dl>
+
+    <div>
+      <label>
+        <abbr title="Quantity">Qty</abbr>:
+        <input
+          class="input text-center w-[10ch]"
+          type="number"
+          min="1"
+          value="{{item.quantity}}"
+        />
+      </label>
+
+      <a class="link" href="{{item.remove_url}}">Remove</a>
+    </div>
+
+    <dl class="tabular-nums">
+      <dt class="sr-only">Total</dt>
+      <dd>{{item.total.formatted}}</dd>
+    </dl>
+  </div>
+</article>

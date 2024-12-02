@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="{{ locale_name }}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- head.meta_tags -->
+  {{{ head.meta_tags }}}
+  <!-- head.config -->
+  {{{ head.config }}}
+  <!-- head.scripts -->
+  {{{ head.scripts }}}
+
+  <title>{{head.title}}</title>
+  <link rel="shortcut icon" href="{{head.favicon}}" />
+  <link rel="stylesheet" href="{{cdn 'assets/styles/styles.min.css'}}">
+
+  {{#block 'head'}}{{/block}}
+</head>
+<body class="bg-canvas text-text">
+  {{> components/skip-to-content}}
+  {{!-- {{> components/header/header}} --}}
+
+  <main id="main-content">
+    {{#block 'body'}}{{/block}}
+  </main>
+
+  {{!-- {{> components/footer}} --}}
+
+  {{{footer.scripts}}}
+</body>
+</html>

@@ -3,11 +3,35 @@
     <h1 class="h1">Cart</h1>
 
     {{#if cart.items.length}}
-      {{#each cart.items}}
-        <div>
-          <a href="{{url}}">{{name}}</a>
-        </div>
-      {{/each}}
+      <ul>
+        {{#each cart.items}}
+          <li>
+            {{> components/cart/line-item item=this}}
+          </li>
+        {{/each}}
+      </ul>
+
+      <menu class="grid justify-end">
+        {{#if cart.show_primary_checkout_button}}
+          <li><a class="action" href="{{urls.checkout.single_address}}">Checkout</a></li>
+
+          {{#if cart.show_multiple_address_shipping}}
+            <li>
+              <a class="action" href="{{urls.checkout.multiple_address}}">
+                Checkout
+                <small class="inline-block">with multiple addresses</small>
+              </a>
+            </li>
+          {{/if}}
+        {{/if}}
+
+
+        {{#if cart.additional_checkout_buttons}}
+          {{#each cart.additional_checkout_buttons}}
+            <li>{{{this}}}</li>
+          {{/each}}
+        {{/if}}
+      </menu>
 
     {{else}}
       <div>Your cart is empty.</div>
