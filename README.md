@@ -4,25 +4,31 @@
 
 ## Development
 
-```sh
-# start local stencil server
-npm run dev
+Start local stencil server:
 
-# watch style and script changes
+```sh
+npm run dev
+```
+
+Watch for changes to CSS and TS files:
+
+```sh
 npm run styles:dev
 npm run scripts:dev
 ```
 
 ## Bundling
 
+Minify styles and scripts, then bundle theme into a .zip file:
+
 ```sh
-# minify styles and scripts, then bundle theme into a .zip file
 npm run build
 ```
 
 ## Pushing
 
+Minify + bundle + push theme to BigCommerce:
+
 ```sh
-# minify + bundle + push theme to BigCommerce
 npm run push
 ```
