@@ -1,0 +1,17 @@
+{{#partial 'body'}}
+  <section class="section">
+    <h1 class="h1">Order details</h1>
+
+    <article>
+      {{json order}}
+
+      {{#if settings.returns_enabled}}
+        {{#if order.is_complete}}
+          <a class="link" href="{{order.return_url}}">Return</a>
+        {{/if}}
+      {{/if}}
+    </article>
+  </section>
+{{/partial}}
+
+{{> layout/base}}

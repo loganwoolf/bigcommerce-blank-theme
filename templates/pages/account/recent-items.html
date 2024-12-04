@@ -1,0 +1,11 @@
+{{#partial 'body'}}
+  <header class="section">
+    <h1 class="h1">Recent items</h1>
+  </header>
+
+  <section class="section">
+    {{> components/product/product-list products=customer.recently_viewed_products.items}}
+  </section>
+{{/partial}}
+
+{{> layout/base}}

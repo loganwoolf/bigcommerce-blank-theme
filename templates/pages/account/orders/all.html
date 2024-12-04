@@ -1,0 +1,15 @@
+{{#partial 'body'}}
+  <section class="section">
+    <h1 class="h1">Orders</h1>
+
+    <ul>
+      {{#each customer.orders}}
+        <li>
+          <a href="{{details_url}}">{{json this}}</a>
+        </li>
+      {{/each}}
+    </ul>
+  </section>
+{{/partial}}
+
+{{> layout/base}}

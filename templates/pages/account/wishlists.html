@@ -1,0 +1,15 @@
+{{#partial 'body'}}
+  <section class="section">
+    <h1 class="h1">Wishlists</h1>
+
+    <ul>
+      {{#each customer.wishlists}}
+        <li>
+          {{json this}}
+        </li>
+      {{/each}}
+    </ul>
+  </section>
+{{/partial}}
+
+{{> layout/base}}

@@ -2,3 +2,5 @@ node_modules/
 
 # stencil
 secrets.stencil.json
+assets/dist/
+*.zip

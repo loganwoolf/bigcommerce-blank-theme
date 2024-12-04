@@ -1,0 +1,39 @@
+{{#partial 'body'}}
+  <section class="section">
+    <h1 class="h1">Inbox</h1>
+
+    <ul>
+      {{#each customer.inbox.messages}}
+        <li>
+          <h2>{{subject}}</h2>
+
+          <time datetime="{{date}}">{{date}}</time>
+
+          <p>{{message}}</p>
+        </li>
+      {{/each}}
+    </ul>
+
+    {{#if customer.inbox.orders}}
+      <form action="{{urls.account.send_message}}" method="post">
+        <select name="message_order_id" id="message_order_id">
+          {{#each customer.inbox.orders}}
+            <option value="{{id}}">
+              Order #{{id}} — {{date}} — {{amount.formatted}}
+            </option>
+          {{/each}}
+        </select>
+
+        <textarea
+          name="message_content"
+          id="message_content"
+          class="input"
+        ></textarea>
+
+        <button class="action" type="submit">Send message</button>
+      </form>
+    {{/if}}
+  </section>
+{{/partial}}
+
+{{> layout/base}}

@@ -4,6 +4,7 @@
   --color-canvas: #fff;
   --color-ink: #000;
   --color-accent: dodgerblue;
+  --color-stroke: #d4d4d4;
 }
 
 @layer base {
@@ -72,6 +73,7 @@
 }
 
 @utility action {
+  cursor: pointer;
   outline: none;
   @apply action-base bg-accent text-white;
 }
@@ -82,7 +84,7 @@
 
 @utility input {
   outline: none;
-  @apply action-base focus-visible:border-accent border;
+  @apply action-base focus-visible:border-accent border-stroke border;
 }
 
 /* headings */
@@ -170,7 +172,7 @@
       top: 100%;
       left: 0;
       z-index: 1;
-      @apply bg-canvas border;
+      @apply bg-canvas border-stroke border;
     }
   }
 }

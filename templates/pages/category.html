@@ -16,13 +16,7 @@ cart: true
   </header>
 
   <section class="section">
-    <ul class="grid gap-x-6 gap-y-12 sm:grid-cols-2 md:grid-cols-[repeat(auto-fill,minmax(15rem,1fr))]">
-      {{#each category.products}}
-        <li>
-          {{> components/product/product-card product=this}}
-        </li>
-      {{/each}}
-    </ul>
+    {{> components/product/product-list products=category.products}}
   </section>
 {{/partial}}
 

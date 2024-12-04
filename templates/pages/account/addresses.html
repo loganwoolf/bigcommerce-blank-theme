@@ -1,0 +1,15 @@
+{{#partial 'body'}}
+  <section class="section">
+    <h1 class="h1">Addresses</h1>
+
+    <ul>
+      {{#each customer.addresses}}
+        <li>
+          {{json this}}
+        </li>
+      {{/each}}
+    </ul>
+  </section>
+{{/partial}}
+
+{{> layout/base}}
