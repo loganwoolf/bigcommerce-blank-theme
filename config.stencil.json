@@ -5,8 +5,8 @@
     "page": {},
     "product": {}
   },
-  "normalStoreUrl": "https://thompsontee.com",
+  "normalStoreUrl": "https://laudd-pixelstudio.mybigcommerce.com",
   "port": 3000,
-  "packageManager": "npm",
+  "packageManager": "pnpm",
   "clientId": "9h5apf3pafdtv1sgleg79i90c79lesr"
 }
